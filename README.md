@@ -42,10 +42,10 @@ Verify the exposed url by invoking using the `curl` CLI or a web browser
 curl -X GET https://21ef035.api-gw.mybluemix.net/openwhisk-team/slackinvite?email=user@example.com
 ```
 
-## Update index.html
+### Update index.html
 Edit the line `var actionUrl = "https://...";` and replace the value with your new url that expose your new action.
 
-## Deploy to github-pages
+### Deploy to github-pages
 Create a new github repo, then go to settings, and set master branch as github page.
 Push the modified `index.html` to the new repo, then your webpage would be accesible from https://$username.github.io/$reponame
 
