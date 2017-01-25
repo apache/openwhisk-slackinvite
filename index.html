@@ -69,9 +69,10 @@ $(document).ready(function() {
   var btn = $("button");
   var res = $("#result");
   var email = $('#inputEmail');
+  var actionUrl = "https://545303d4-dd03-4cfc-a553-4253f7929dfd-gws.api-gw.mybluemix.net/openwhisk-team/slackinvite";
   function handler() {
     var email = $("input")[0].value;
-    $.get("https://545303d4-dd03-4cfc-a553-4253f7929dfd-gws.api-gw.mybluemix.net/openwhisk-team/slackinvite", { email: email })
+    $.get(actionUrl, { email: email })
       .done(function (data) {
         btn.addClass("btn-success");
         btn.html("WOOT. CHECK YOUR EMAIL!");
