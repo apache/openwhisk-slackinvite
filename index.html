@@ -28,7 +28,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<style>
+  <style>
 .splash {
   width: 500px;
   margin: 200px auto;
@@ -44,8 +44,8 @@
 </head>
 
 <body>
-<div class="splash">
-<img src="https://s23.postimg.org/oy3kv2uxn/skitch.png" style="height: 60px; margin-left: 100px;"/>
+  <div class="splash">
+    <img src="https://s23.postimg.org/oy3kv2uxn/skitch.png" style="height: 60px; margin-left: 100px;"/>
 <p>Join the OpenWhisk Community to discuss the project in realtime.</p>
 <ul>
   <li><strong>Talk</strong> to the core devs and the OpenWhisk community.</li>
@@ -55,7 +55,7 @@
 <form class="form-inline">
   <div class="form-group">
     <label for="exampleInputEmail2">Email:</label>
-    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+    <input type="email" class="form-control" id="inputEmail" placeholder="jane.doe@example.com" required>
   </div>
   <button type="button" class="btn btn-primary">Send invitation</button>
 </form>
@@ -65,8 +65,10 @@
 </div>
 
 <script type="text/javascript">
+$(document).ready(function() {
   var btn = $("button");
   var res = $("#result");
+  var email = $('#inputEmail');
   function handler() {
     var email = $("input")[0].value;
     $.get("https://545303d4-dd03-4cfc-a553-4253f7929dfd-gws.api-gw.mybluemix.net/openwhisk-team/slackinvite", { email: email })
@@ -80,7 +82,19 @@
         btn.addClass("btn-error");
       });
   }
-  btn.click(handler); 
+  btn.click(handler);
+  btn.prop("disabled", true);
+  
+  function validate() {
+    console.log("validate")
+    if (email[0].validity.typeMismatch) {
+      btn.prop("disabled", true);
+    } else {
+      btn.prop("disabled", false);
+    }
+  }
+  email.keyup(validate); 
+})
 </script>
 </body>
 
