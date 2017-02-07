@@ -1,76 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Slack Invite for OpenWhisk</title>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-    crossorigin="anonymous">
-
-  <!-- Latest compiled and minified JavaScript -->
-
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script>
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Slack Invite for OpenWhisk</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+.outer {
+width: 500px;
+min-width: 320px; 
+text-align: center;
+margin: 10px auto;
+font-family: "Helvetica Neue", Helvetica, Arial
+}
 
-<style>
+.inner {
+margin: 10px;
+}
+
 .splash {
-  width: 500px;
-  margin: 200px auto;
-  font-family: "Helvetica Neue", Helvetica, Arial
+display: block;
+margin: 0px auto;
+font-family: "Helvetica Neue", Helvetica, Arial
 }
 
-@media (max-width: 500px) {
-  .splash {
-      margin-top:100px
-  }
+.footer {
+margin: 10px auto;
+text-align: center;
+font-size: small;
+font-family: "Helvetica Neue", Helvetica, Arial
 }
 
-p, form {
-  padding: 5px 5px;
+@media screen and (max-width: 360px) and (min-width: 320px)
+{
+ .outer{
+   max-width: 320px
+}
 }
 </style>
-</head>
-
-<body>
-  <div class="splash">
-    <img src="https://s23.postimg.org/oy3kv2uxn/skitch.png" style="height: 60px; margin-left: 100px;"/>
-<p>Join the OpenWhisk Community to discuss the project in realtime.</p>
-<ul>
-  <li><strong>Talk</strong> to the core devs and the OpenWhisk community.</li>
-  <li><strong>Learn</strong> from others and ask questions.</li>
-  <li><strong>Share</strong> your work and demos.</li>
-</ul>
-<p>If you are already a member, go to <strong><a href="https://openwhisk-team.slack.com">openwhisk-team.slack.com</a></strong></p>
-<p>If you're not a member, enter your email below to get an invite:</p>
-<form class="form-inline">
-  <div class="form-group">
-    <label for="exampleInputEmail2">Email:</label>
-    <input type="email" class="form-control" id="inputEmail" placeholder="jane.doe@example.com" required>
-  </div>
-  <button type="button" class="btn btn-primary">Send invitation</button>
-</form>
-<p>Please be nice, respectful and inclusive of others!</p>
-<p id="result"></p>
-<p>Fork on github <a href="https://github.com/openwhisk/openwhisk-slackinvite" target="blank">openwhisk/openwhisk-slackinvite</a></p>
-</div>
-
-<script type="text/javascript">
+  </head>
+  <body>
+    <div class="outer">
+      <div class="splash"><img
+          src="https://s23.postimg.org/oy3kv2uxn/skitch.png"
+          alt="OpenWhisk plus Slack" style="height: 60px;"> </div>
+      <div class="inner">
+        <h3>Already a Team member?</h3>
+        <p>click here: <a href="https://openwhisk-team.slack.com/"><b>openwhisk-team.slack.com</b></a></p>
+      </div>
+      <div class="inner">
+        <h3>If not, join us!</h3>
+        <p>Join the OpenWhisk Community to discuss the project in
+          real-time.</p>
+        <ul style="text-align: left">
+          <li><strong>Talk</strong> to the core devs and the OpenWhisk
+            community.</li>
+          <li><strong>Learn</strong> from others and ask questions.</li>
+          <li><strong>Share</strong> your work and demos.</li>
+        </ul>
+        <form class="form-inline">
+          <div class="form-group"> <label for="exampleInputEmail2">Email:</label>
+            <input class="form-control" id="inputEmail"
+              placeholder="jane.doe@example.com" required=""
+              type="email"> </div>
+          <button type="button" class="btn btn-primary" style="margin:
+            5px;">Send invitation</button> </form>
+      </div>
+      <div class="inner">
+        <p>We are a friendly, respectful and inclusive community!</p>
+      </div>
+      <div class="footer"><a href="https://openwhisk-team.slack.com/"> </a>
+        <p><i>Code for Slack invite (this page) is on github:</i><br>
+          <i> </i><i><a
+              href="https://github.com/openwhisk/openwhisk-slackinvite"
+              target="blank">https://github.com/openwhisk/openwhisk-slackinvite</a></i></p>
+      </div>
+    </div>
+    <script type="text/javascript">
 $(document).ready(function() {
   var btn = $("button");
   var res = $("#result");
@@ -103,6 +130,5 @@ $(document).ready(function() {
   email.keyup(validate);
 })
 </script>
-</body>
-
+  </body>
 </html>
