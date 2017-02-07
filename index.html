@@ -28,7 +28,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-  <style>
+<style>
 .splash {
   width: 500px;
   margin: 200px auto;
@@ -39,6 +39,10 @@
   .splash {
       margin-top:100px
   }
+}
+
+p, form {
+  padding: 5px 5px;
 }
 </style>
 </head>
@@ -52,6 +56,8 @@
   <li><strong>Learn</strong> from others and ask questions.</li>
   <li><strong>Share</strong> your work and demos.</li>
 </ul>
+<p>If you are already a member, go to <strong><a href="https://openwhisk-team.slack.com">openwhisk-ibm.slack.com</a></strong></p>
+<p>If you're not a member, enter your email below to get an invite:</p>
 <form class="form-inline">
   <div class="form-group">
     <label for="exampleInputEmail2">Email:</label>
@@ -85,7 +91,7 @@ $(document).ready(function() {
   }
   btn.click(handler);
   btn.prop("disabled", true);
-  
+
   function validate() {
     console.log("validate")
     if (email[0].validity.typeMismatch) {
@@ -94,7 +100,7 @@ $(document).ready(function() {
       btn.prop("disabled", false);
     }
   }
-  email.keyup(validate); 
+  email.keyup(validate);
 })
 </script>
 </body>
