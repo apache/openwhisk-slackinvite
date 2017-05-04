@@ -85,13 +85,16 @@ font-family: "Helvetica Neue", Helvetica, Arial
               placeholder="jane.doe@example.com" required=""
               type="email"> </div>
           <button type="button" class="btn btn-primary" style="margin:
-            5px;">Send invitation</button> </form>
+            5px;">Send invitation</button> 
+        <div id="result">    
+        </form>
       </div>
       <div class="inner">
         <p>We are a friendly, respectful and inclusive community!</p>
       </div>
       <div class="footer"><a href="https://openwhisk-team.slack.com/"> </a>
         <p><i>Code for Slack invite (this page) is on github:</i><br>
+        
           <i> </i><i><a
               href="https://github.com/openwhisk/openwhisk-slackinvite"
               target="blank">https://github.com/openwhisk/openwhisk-slackinvite</a></i></p>
@@ -104,16 +107,23 @@ $(document).ready(function() {
   var email = $('#inputEmail');
   var actionUrl = "https://545303d4-dd03-4cfc-a553-4253f7929dfd-gws.api-gw.mybluemix.net/openwhisk-team/slackinvite";
   function handler() {
-    var email = $("input")[0].value;
-    $.get(actionUrl, { email: email })
+    $.get(actionUrl, { email: email[0].value })
       .done(function (data) {
+        btn.removeClass("btn-danger");
         btn.addClass("btn-success");
         btn.html("WOOT. CHECK YOUR EMAIL!");
         res.html(data.message);
       })
       .fail(function (err) {
-        res.html(err.statusText + ":Your invitation didn't work :-( ");
-        btn.addClass("btn-error");
+        btn.addClass("btn-danger");
+        btn.html("Problem with invite");
+        if(err.responseJSON) console.log(err.responseJSON)
+        if(err.responseJSON && err.responseJSON.error && err.responseJSON.error.message){
+          res.html(err.responseJSON.error.message);
+        } else {
+          res.html(err.statusText + ":Your invitation didn't work :-( ");
+        }
+        
       });
   }
   btn.click(handler);
@@ -127,6 +137,7 @@ $(document).ready(function() {
       btn.prop("disabled", false);
     }
   }
+  email.change(validate);
   email.keyup(validate);
 })
 </script>

@@ -1,7 +1,7 @@
 # openwhisk-slackinvite
 Simple webpage for invitations for Apache OpenWhisk Slack Community
 
-Join our Slack https://csantanapr.github.io/openwhisk-slackinvite
+Join our Slack https://openwhisk.github.io/openwhisk-slackinvite
 
 Backend is implemented as a serverless action with api gateway route
 
@@ -12,7 +12,7 @@ Configure the `wsk` CLI with authentication and host
 
 Create the action using `wsk` CLI and set default parameters
 ```
-wsk create slackinvite action.js -p org "myslackteam" -p slacktoken "xop-12345..."
+wsk action create slackinvite action.js -p org "myslackteam" -p slacktoken "xop-12345..."
 ```
 
 The org is the Slack team name, usually the hostname from your .slack.com.
