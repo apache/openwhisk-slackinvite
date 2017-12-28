@@ -1,7 +1,7 @@
 # openwhisk-slackinvite
 Simple webpage for invitations for Apache OpenWhisk Slack Community
 
-Join our Slack https://openwhisk.github.io/openwhisk-slackinvite
+Join our Slack https://openwhisk.apache.org/slack.html
 
 Backend is implemented as a serverless action with api gateway route
 
