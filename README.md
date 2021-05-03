@@ -1,9 +1,9 @@
 # openwhisk-slackinvite
-Simple webpage for invitations for Apache OpenWhisk Slack Community
+Simple webpage for invitations for Apache OpenWhisk Slack Community.
 
-Join our Slack https://openwhisk.apache.org/slack.html
+Join our Slack: [https://openwhisk.apache.org/slack.html](https://openwhisk.apache.org/slack.html)
 
-Backend is implemented as a serverless action with api gateway route
+The backend is implemented as a serverless action with an API gateway route.
 
 ## Installing
 
@@ -45,9 +45,9 @@ curl -X GET https://21ef035.api-gw.mybluemix.net/openwhisk-team/slackinvite?emai
 ### Update index.html
 Edit the line `var actionUrl = "https://...";` and replace the value with your new url that expose your new action.
 
-### Deploy to github-pages
-Create a new github repo, then go to settings, and set master branch as github page.
-Push the modified `index.html` to the new repo, then your webpage would be accesible from https://$username.github.io/$reponame
+### Deploy to GitHub Pages
+Create a new GitHub repo, then go to settings, and set the master branch as GitHub Pages.
+Push the modified `index.html` to the new repo, then your webpage will be accesible from `https://$username.github.io/$reponame`
 
 
 License: Apache-2.0
